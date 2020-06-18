@@ -1,0 +1,40 @@
+<% include ./partials/header %>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+</style>
+	<div class="ui center aligned huge header">Placement and Higher Studies Information System</div>
+ 	<div class="grid-container">
+ 	<% students.forEach(function(student){ %>
+ 	<div class="ui card">
+  <div class="content">
+    <div class="header"> <%= student.name %></div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header"><%= student.roll %></h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+            GENDER : <%= student.gender%>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             DEPT : <%= student.dept%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+   <a href="/students/<%=student._id%>"><button class="ui olive button">More</button></a>
+  </div>
+</div>
+<% });%>
+<div>
+<% include ./partials/footer %>

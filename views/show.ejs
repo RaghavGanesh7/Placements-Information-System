@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+ <div class="ui huge header"><%=student.name%></div>
+ <table class="ui table">
+     <tr>
+         <th><p><%-student.roll%></p></th>
+     </tr>
+     <tr>
+         <th><span><%=student.created.toDateString()%></span></th>
+     </tr>
+     <tr>
+         <th><p><%-student.dept%></p> </th>
+     </tr>
+     <tr>
+         <th><p><%-student.gender%></p></th>
+     </tr>
+     <tr>
+         <th><%- student.company %></th>
+     </tr>
+     <tr>
+         <th><%- student.placement %></th>
+     </tr>
+     <tr>
+         <th><%- student.placed %></th>
+     </tr>
+     <tr>
+            <th><%- student.package %></th>
+        </tr>
+    </table>
+    <a class="ui orange basic button" href="/students/<%=student._id%>/edit">Edit</a>
+       
+    <form id="delete" action="/students/<%=student._id%>?_method=DELETE" method="POST">
+           <button class="ui red basic button">Delete</button>
+       </form>
+  </div>
+</div>
+
+<% include ./partials/footer %>

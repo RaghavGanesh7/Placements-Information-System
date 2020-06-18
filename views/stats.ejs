@@ -1,0 +1,140 @@
+<% include ./partials/header %>
+    <% n=0,male=0,female=0, placed=0,np=0, higher=0,cse=0,ece=0,mech=0,eee=0,it=0,civil=0,eie=0 ;%>
+            <% students.forEach(function(student){ %>
+                    <% n=n+1; %>
+                    <% if(student.gender=="male"){ %>  
+                    <% male=male+1; } %>
+                    <% female=n-male;%>
+                    <% if(student.placed=="Placed"){ %>
+                    <% placed= placed+1; } %>
+                    <% if(student.placement=="Higher Studies"){ %>
+                        <% higher= higher+1; } %>
+                        <% np=n-placed-higher; %>
+                        <% if(student.dept=="cse"){%>
+                        <%  cse=cse+1; } %>
+                        <% if(student.dept=="cse"){%>
+                      <%  cse=cse+1; } %>
+                      <% if(student.dept=="ece"){%>
+                      <%  ece=ece+1; } %>
+                      <% if(student.dept=="mech"){%>
+                      <%  mech=mech+1; } %>
+                      <% if(student.dept=="it"){%>
+                      <%  it=it+1; } %>
+                      <% if(student.dept=="civil"){%>
+                      <%  civil=civil+1; } %>
+                      <% if(student.dept=="eie"){%>
+                      <%  eie=eie+1; } %>
+                      <%  %>
+                      <%  %>
+            <% }); %>
+    <div class="ui main text container segment">
+        <div class="ui statistics">
+            <div class="red statistic">
+                <div class="label">
+                    Total Number of Students
+                </div>                          
+                <div class="value">
+                    <%= n %>
+                </div>
+            </div>
+            <div class="red statistic">
+                    <div class="label">
+                        Male
+                    </div>                          
+                    <div class="value">
+                        <%= male %>
+                    </div>
+                </div>
+                <div class="blue statistic">
+                        <div class="label">
+                            Female
+                        </div>                          
+                        <div class="value">
+                            <%= female %>
+                        </div>
+                    </div>
+                    <br>
+                <div class="green statistic">
+                        <div class="label">
+                            Placed
+                        </div>                          
+                        <div class="value">
+                            <%= placed %>
+                        </div>
+                    </div>
+                    <div class="red statistic">
+                            <div class="label">
+                               Not Placed
+                            </div>                          
+                            <div class="value">
+                                <%= np %>
+                            </div>
+                        </div>
+                    <div class="red statistic">
+                            <div class="label">
+                                Higher Studies
+                            </div>                          
+                            <div class="value">
+                                <%= higher %>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="red statistic">
+                                <div class="label">
+                                   CSE
+                                </div>                          
+                                <div class="value">
+                                    <%= cse %>
+                                </div>
+                            </div>
+                            <div class="red statistic">
+                                    <div class="label">
+                                       IT
+                                    </div>                          
+                                    <div class="value">
+                                        <%= it %>
+                                    </div>
+                                </div>
+                                <div class="red statistic">
+                                        <div class="label">
+                                           CIVIL
+                                        </div>                          
+                                        <div class="value">
+                                            <%= civil %>
+                                        </div>
+                                    </div>
+                                    <div class="red statistic">
+                                            <div class="label">
+                                               EIE
+                                            </div>                          
+                                            <div class="value">
+                                                <%= eie %>
+                                            </div>
+                                        </div>
+                      <div class="red statistic">
+                          <div class="label">
+                                                    MECH
+                                                    </div>                          
+                                                <div class="value">
+                                                    <%= mech %>
+                                                </div>
+                                            </div>
+                                            <div class="red statistic">
+                                                    <div class="label">
+                                                        ECE
+                                                    </div>                          
+                                                    <div class="value">
+                                                        <%= ece %>
+                                                    </div>
+                                                </div>
+                                                <div class="red statistic">
+                                                        <div class="label">
+                                                            EEE
+                                                        </div>                          
+                                                        <div class="value">
+                                                            <%= eee %>
+                                                        </div>
+                                                    </div>
+        </div>
+    </div>
+<% include ./partials/footer %>

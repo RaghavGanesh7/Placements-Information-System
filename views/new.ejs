@@ -1,0 +1,83 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Record</div>
+    <form class="ui form" action="/students" method="POST" autocomplete="off">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="student[name]" placeholder="Name">
+        </div>
+       <div class="field">
+            <label>Department</label>
+            <input type="text" name="student[dept]" placeholder="Department">
+        </div>
+         <div class="field">
+            <label>Roll</label>
+            <input type="text" name="student[roll]" placeholder="Roll">
+        </div>
+    <div class="field">
+       <label>Gender</label>
+       <input type="radio" name="student[gender]" value="male" checked> Male<br>
+       <input type="radio" name="student[gender]" value="female"> Female<br>
+       <input type="radio" name="student[gender]" value="other"> Others
+   </div>
+   <div class="field">
+    <label>Placement Option</label>
+    <input type="radio"  name="student[placement]" value="Placement">Placement <br>
+    <input type="radio" id="placed1" onclick="myfunction(this.value)"   name="student[placement]" value="Higher Studies"> Higher Studies <br>
+</div>
+
+<div class="field">
+    <label>Placed ?</label>
+    <input type="radio" id="place" name="student[placed]" value="Placed"> Placed <br>
+    <input type="radio" id="place1" onclick="myfunction1(this.value)" name="student[placed]" value="Not Placed"> Not Placed <br>
+</div>
+   <div class="field">
+       <label>Company</label>
+       <select id="select" name="student[company]">
+        <option value="">None</option>
+        <option value="tcs">TCS</option>
+        <option value="infosys">Infosys</option>
+        <option value="apple">Apple</option>
+        <option value="kony">Kony</option>
+        <option value="cleartrip">Cleartrip</option>
+        <option value="maq">MAQ</option>
+        <option value="virtusa">Virtusa</option>
+        <option value="epam">Epam</option>
+        <option value="ggk">GGK</option>
+        <option value="ta">Tech Aspect</option>
+        <option value="quickr">Quikr</option>
+        <option value="persisent">Persisent</option>
+        <option value="delloite">Delloite</option>
+        <option value="accenture">Accenture</option>
+        <option value="valuelabs">Value Labs</option>
+    </select>
+   </div>
+   <div class="item">
+       <div class="label">Package</div>
+        <input type="text" id="package" onclick="myfunction2(this.value)" name="student[package]" placeholder="package"><br>
+   </div>
+    <input class="ui inverted blue big button" type="submit">
+    </form>
+</div>
+<script>
+        function myfunction(placed)
+        {
+            if(placed=="Higher Studies")
+            {
+                document.getElementById("place1").style.display="none";
+                document.getElementById("select").style.display="none";
+                document.getElementById("place").style.display="none";
+                document.getElementById("package").style.display="none";
+            }
+        }
+        function myfunction1(place)
+        {
+            if(place=="Not Placed")
+            {   
+                document.getElementById("package").style.display="none"
+                document.getElementById("select").style.display="none";   
+            }
+        }
+    </script>
+<% include ./partials/footer %>
