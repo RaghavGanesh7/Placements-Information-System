@@ -6,6 +6,7 @@ mongoose        = require("mongoose"),
 app             = express();
 
 //config
+mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://localhost/student");
 app.set("view engine", "ejs"); 
 app.use(express.static("public")); 
